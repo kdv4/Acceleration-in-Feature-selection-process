@@ -1,0 +1,407 @@
+MPG,Car,Cylinders,Displacement,Horsepower,Weight,Acceleration,Model,Origin
+18,Chevrolet Chevelle Malibu,8,307,130,3504,12,70,US
+15,Buick Skylark 320,8,350,165,3693,11.5,70,US
+18,Plymouth Satellite,8,318,150,3436,11,70,US
+16,AMC Rebel SST,8,304,150,3433,12,70,US
+17,Ford Torino,8,302,140,3449,10.5,70,US
+15,Ford Galaxie 500,8,429,198,4341,10,70,US
+14,Chevrolet Impala,8,454,220,4354,9,70,US
+14,Plymouth Fury iii,8,440,215,4312,8.5,70,US
+14,Pontiac Catalina,8,455,225,4425,10,70,US
+15,AMC Ambassador DPL,8,390,190,3850,8.5,70,US
+0,Citroen DS-21 Pallas,4,133,115,3090,17.5,70,Europe
+0,Chevrolet Chevelle Concours (sw),8,350,165,4142,11.5,70,US
+0,Ford Torino (sw),8,351,153,4034,11,70,US
+0,Plymouth Satellite (sw),8,383,175,4166,10.5,70,US
+0,AMC Rebel SST (sw),8,360,175,3850,11,70,US
+15,Dodge Challenger SE,8,383,170,3563,10,70,US
+14,Plymouth 'Cuda 340,8,340,160,3609,8,70,US
+0,Ford Mustang Boss 302,8,302,140,3353,8,70,US
+15,Chevrolet Monte Carlo,8,400,150,3761,9.5,70,US
+14,Buick Estate Wagon (sw),8,455,225,3086,10,70,US
+24,Toyota Corolla Mark ii,4,113,95,2372,15,70,Japan
+22,Plymouth Duster,6,198,95,2833,15.5,70,US
+18,AMC Hornet,6,199,97,2774,15.5,70,US
+21,Ford Maverick,6,200,85,2587,16,70,US
+27,Datsun PL510,4,97,88,2130,14.5,70,Japan
+26,Volkswagen 1131 Deluxe Sedan,4,97,46,1835,20.5,70,Europe
+25,Peugeot 504,4,110,87,2672,17.5,70,Europe
+24,Audi 100 LS,4,107,90,2430,14.5,70,Europe
+25,Saab 99e,4,104,95,2375,17.5,70,Europe
+26,BMW 2002,4,121,113,2234,12.5,70,Europe
+21,AMC Gremlin,6,199,90,2648,15,70,US
+10,Ford F250,8,360,215,4615,14,70,US
+10,Chevy C20,8,307,200,4376,15,70,US
+11,Dodge D200,8,318,210,4382,13.5,70,US
+9,Hi 1200D,8,304,193,4732,18.5,70,US
+27,Datsun PL510,4,97,88,2130,14.5,71,Japan
+28,Chevrolet Vega 2300,4,140,90,2264,15.5,71,US
+25,Toyota Corolla,4,113,95,2228,14,71,Japan
+25,Ford Pinto,4,98,0,2046,19,71,US
+0,Volkswagen Super Beetle 117,4,97,48,1978,20,71,Europe
+19,AMC Gremlin,6,232,100,2634,13,71,US
+16,Plymouth Satellite Custom,6,225,105,3439,15.5,71,US
+17,Chevrolet Chevelle Malibu,6,250,100,3329,15.5,71,US
+19,Ford Torino 500,6,250,88,3302,15.5,71,US
+18,AMC Matador,6,232,100,3288,15.5,71,US
+14,Chevrolet Impala,8,350,165,4209,12,71,US
+14,Pontiac Catalina Brougham,8,400,175,4464,11.5,71,US
+14,Ford Galaxie 500,8,351,153,4154,13.5,71,US
+14,Plymouth Fury iii,8,318,150,4096,13,71,US
+12,Dodge Monaco (sw),8,383,180,4955,11.5,71,US
+13,Ford Country Squire (sw),8,400,170,4746,12,71,US
+13,Pontiac Safari (sw),8,400,175,5140,12,71,US
+18,AMC Hornet Sportabout (sw),6,258,110,2962,13.5,71,US
+22,Chevrolet Vega (sw),4,140,72,2408,19,71,US
+19,Pontiac Firebird,6,250,100,3282,15,71,US
+18,Ford Mustang,6,250,88,3139,14.5,71,US
+23,Mercury Capri 2000,4,122,86,2220,14,71,US
+28,Opel 1900,4,116,90,2123,14,71,Europe
+30,Peugeot 304,4,79,70,2074,19.5,71,Europe
+30,Fiat 124B,4,88,76,2065,14.5,71,Europe
+31,Toyota Corolla 1200,4,71,65,1773,19,71,Japan
+35,Datsun 1200,4,72,69,1613,18,71,Japan
+27,Volkswagen Model 111,4,97,60,1834,19,71,Europe
+26,Plymouth Cricket,4,91,70,1955,20.5,71,US
+24,Toyota Corolla Hardtop,4,113,95,2278,15.5,72,Japan
+25,Dodge Colt Hardtop,4,97.5,80,2126,17,72,US
+23,Volkswagen Type 3,4,97,54,2254,23.5,72,Europe
+20,Chevrolet Vega,4,140,90,2408,19.5,72,US
+21,Ford Pinto Runabout,4,122,86,2226,16.5,72,US
+13,Chevrolet Impala,8,350,165,4274,12,72,US
+14,Pontiac Catalina,8,400,175,4385,12,72,US
+15,Plymouth Fury III,8,318,150,4135,13.5,72,US
+14,Ford Galaxie 500,8,351,153,4129,13,72,US
+17,AMC Ambassador SST,8,304,150,3672,11.5,72,US
+11,Mercury Marquis,8,429,208,4633,11,72,US
+13,Buick LeSabre Custom,8,350,155,4502,13.5,72,US
+12,Oldsmobile Delta 88 Royale,8,350,160,4456,13.5,72,US
+13,Chrysler Newport Royal,8,400,190,4422,12.5,72,US
+19,Mazda RX2 Coupe,3,70,97,2330,13.5,72,Japan
+15,AMC Matador (sw),8,304,150,3892,12.5,72,US
+13,Chevrolet Chevelle Concours (sw),8,307,130,4098,14,72,US
+13,Ford Gran Torino (sw),8,302,140,4294,16,72,US
+14,Plymouth Satellite Custom (sw),8,318,150,4077,14,72,US
+18,Volvo 145e (sw),4,121,112,2933,14.5,72,Europe
+22,Volkswagen 411 (sw),4,121,76,2511,18,72,Europe
+21,Peugeot 504 (sw),4,120,87,2979,19.5,72,Europe
+26,Renault 12 (sw),4,96,69,2189,18,72,Europe
+22,Ford Pinto (sw),4,122,86,2395,16,72,US
+28,Datsun 510 (sw),4,97,92,2288,17,72,Japan
+23,Toyota Corolla Mark II (sw),4,120,97,2506,14.5,72,Japan
+28,Dodge Colt (sw),4,98,80,2164,15,72,US
+27,Toyota Corolla 1600 (sw),4,97,88,2100,16.5,72,Japan
+13,Buick Century 350,8,350,175,4100,13,73,US
+14,AMC Matador,8,304,150,3672,11.5,73,US
+13,Chevrolet Malibu,8,350,145,3988,13,73,US
+14,Ford Gran Torino,8,302,137,4042,14.5,73,US
+15,Dodge Coronet Custom,8,318,150,3777,12.5,73,US
+12,Mercury Marquis Brougham,8,429,198,4952,11.5,73,US
+13,Chevrolet Caprice Classic,8,400,150,4464,12,73,US
+13,Ford LTD,8,351,158,4363,13,73,US
+14,Plymouth Fury Gran Sedan,8,318,150,4237,14.5,73,US
+13,Chrysler New Yorker Brougham,8,440,215,4735,11,73,US
+12,Buick Electra 225 Custom,8,455,225,4951,11,73,US
+13,AMC Ambassador Brougham,8,360,175,3821,11,73,US
+18,Plymouth Valiant,6,225,105,3121,16.5,73,US
+16,Chevrolet Nova Custom,6,250,100,3278,18,73,US
+18,AMC Hornet,6,232,100,2945,16,73,US
+18,Ford Maverick,6,250,88,3021,16.5,73,US
+23,Plymouth Duster,6,198,95,2904,16,73,US
+26,Volkswagen Super Beetle,4,97,46,1950,21,73,Europe
+11,Chevrolet Impala,8,400,150,4997,14,73,US
+12,Ford Country,8,400,167,4906,12.5,73,US
+13,Plymouth Custom Suburb,8,360,170,4654,13,73,US
+12,Oldsmobile Vista Cruiser,8,350,180,4499,12.5,73,US
+18,AMC Gremlin,6,232,100,2789,15,73,US
+20,Toyota Camry,4,97,88,2279,19,73,Japan
+21,Chevrolet Vega,4,140,72,2401,19.5,73,US
+22,Datsun 610,4,108,94,2379,16.5,73,Japan
+18,Mazda RX3,3,70,90,2124,13.5,73,Japan
+19,Ford Pinto,4,122,85,2310,18.5,73,US
+21,Mercury Capri v6,6,155,107,2472,14,73,US
+26,Fiat 124 Sport Coupe,4,98,90,2265,15.5,73,Europe
+15,Chevrolet Monte Carlo S,8,350,145,4082,13,73,US
+16,Pontiac Grand Prix,8,400,230,4278,9.5,73,US
+29,Fiat 128,4,68,49,1867,19.5,73,Europe
+24,Opel Manta,4,116,75,2158,15.5,73,Europe
+20,Audi 100LS,4,114,91,2582,14,73,Europe
+19,Volvo 144ea,4,121,112,2868,15.5,73,Europe
+15,Dodge Dart Custom,8,318,150,3399,11,73,US
+24,Saab 99le,4,121,110,2660,14,73,Europe
+20,Toyota Mark II,6,156,122,2807,13.5,73,Japan
+11,Oldsmobile Omega,8,350,180,3664,11,73,US
+20,Plymouth Duster,6,198,95,3102,16.5,74,US
+21,Ford Maverick,6,200,0,2875,17,74,US
+19,AMC Hornet,6,232,100,2901,16,74,US
+15,Chevrolet Nova,6,250,100,3336,17,74,US
+31,Datsun B210,4,79,67,1950,19,74,Japan
+26,Ford Pinto,4,122,80,2451,16.5,74,US
+32,Toyota Corolla 1200,4,71,65,1836,21,74,Japan
+25,Chevrolet Vega,4,140,75,2542,17,74,US
+16,Chevrolet Chevelle Malibu Classic,6,250,100,3781,17,74,US
+16,AMC Matador,6,258,110,3632,18,74,US
+18,Plymouth Satellite Sebring,6,225,105,3613,16.5,74,US
+16,Ford Gran Torino,8,302,140,4141,14,74,US
+13,Buick Century Luxus (sw),8,350,150,4699,14.5,74,US
+14,Dodge Coronet Custom (sw),8,318,150,4457,13.5,74,US
+14,Ford Gran Torino (sw),8,302,140,4638,16,74,US
+14,AMC Matador (sw),8,304,150,4257,15.5,74,US
+29,Audi Fox,4,98,83,2219,16.5,74,Europe
+26,Volkswagen Dasher,4,79,67,1963,15.5,74,Europe
+26,Opel Manta,4,97,78,2300,14.5,74,Europe
+31,Toyota Corolla,4,76,52,1649,16.5,74,Japan
+32,Datsun 710,4,83,61,2003,19,74,Japan
+28,Dodge Colt,4,90,75,2125,14.5,74,US
+24,Fiat 128,4,90,75,2108,15.5,74,Europe
+26,Fiat 124 TC,4,116,75,2246,14,74,Europe
+24,Honda Civic,4,120,97,2489,15,74,Japan
+26,Subaru,4,108,93,2391,15.5,74,Japan
+31,Fiat x1.9,4,79,67,2000,16,74,Europe
+19,Plymouth Valiant Custom,6,225,95,3264,16,75,US
+18,Chevrolet Nova,6,250,105,3459,16,75,US
+15,Mercury Monarch,6,250,72,3432,21,75,US
+15,Ford Maverick,6,250,72,3158,19.5,75,US
+16,Pontiac Catalina,8,400,170,4668,11.5,75,US
+15,Chevrolet Bel Air,8,350,145,4440,14,75,US
+16,Plymouth Grand Fury,8,318,150,4498,14.5,75,US
+14,Ford LTD,8,351,148,4657,13.5,75,US
+17,Buick Century,6,231,110,3907,21,75,US
+16,Chevrolete Chevelle Malibu,6,250,105,3897,18.5,75,US
+15,AMC Matador,6,258,110,3730,19,75,US
+18,Plymouth Fury,6,225,95,3785,19,75,US
+21,Buick Skyhawk,6,231,110,3039,15,75,US
+20,Chevrolet Monza 2+2,8,262,110,3221,13.5,75,US
+13,Ford Mustang II,8,302,129,3169,12,75,US
+29,Toyota Corolla,4,97,75,2171,16,75,Japan
+23,Ford Pinto,4,140,83,2639,17,75,US
+20,AMC Gremlin,6,232,100,2914,16,75,US
+23,Pontiac Astro,4,140,78,2592,18.5,75,US
+24,Toyota Corolla,4,134,96,2702,13.5,75,Japan
+25,Volkswagen Dasher,4,90,71,2223,16.5,75,Europe
+24,Datsun 710,4,119,97,2545,17,75,Japan
+18,Ford Pinto,6,171,97,2984,14.5,75,US
+29,Volkswagen Rabbit,4,90,70,1937,14,75,Europe
+19,AMC Pacer,6,232,90,3211,17,75,US
+23,Audi 100LS,4,115,95,2694,15,75,Europe
+23,Peugeot 504,4,120,88,2957,17,75,Europe
+22,Volvo 244DL,4,121,98,2945,14.5,75,Europe
+25,Saab 99LE,4,121,115,2671,13.5,75,Europe
+33,Honda Civic CVCC,4,91,53,1795,17.5,75,Japan
+28,Fiat 131,4,107,86,2464,15.5,76,Europe
+25,Opel 1900,4,116,81,2220,16.9,76,Europe
+25,Capri ii,4,140,92,2572,14.9,76,US
+26,Dodge Colt,4,98,79,2255,17.7,76,US
+27,Renault 12tl,4,101,83,2202,15.3,76,Europe
+17.5,Chevrolet Chevelle Malibu Classic,8,305,140,4215,13,76,US
+16,Dodge Coronet Brougham,8,318,150,4190,13,76,US
+15.5,AMC Matador,8,304,120,3962,13.9,76,US
+14.5,Ford Gran Torino,8,351,152,4215,12.8,76,US
+22,Plymouth Valiant,6,225,100,3233,15.4,76,US
+22,Chevrolet Nova,6,250,105,3353,14.5,76,US
+24,Ford Maverick,6,200,81,3012,17.6,76,US
+22.5,AMC Hornet,6,232,90,3085,17.6,76,US
+29,Chevrolet Chevette,4,85,52,2035,22.2,76,US
+24.5,Chevrolet Woody,4,98,60,2164,22.1,76,US
+29,Volkswagen Rabbit,4,90,70,1937,14.2,76,Europe
+33,Honda Civic,4,91,53,1795,17.4,76,Japan
+20,Dodge Aspen SE,6,225,100,3651,17.7,76,US
+18,Ford Grenada ghia,6,250,78,3574,21,76,US
+18.5,Pontiac Ventura SJ,6,250,110,3645,16.2,76,US
+17.5,AMC Pacer d/l,6,258,95,3193,17.8,76,US
+29.5,Volkswagen Rabbit,4,97,71,1825,12.2,76,Europe
+32,Datsun B-210,4,85,70,1990,17,76,Japan
+28,Toyota Corolla,4,97,75,2155,16.4,76,Japan
+26.5,Ford Pinto,4,140,72,2565,13.6,76,US
+20,Volvo 245,4,130,102,3150,15.7,76,Europe
+13,Plymouth Volare Premier v8,8,318,150,3940,13.2,76,US
+19,Peugeot 504,4,120,88,3270,21.9,76,Europe
+19,Toyota Mark II,6,156,108,2930,15.5,76,Japan
+16.5,Mercedes-Benz 280s,6,168,120,3820,16.7,76,Europe
+16.5,Cadillac Seville,8,350,180,4380,12.1,76,US
+13,Chevrolet C10,8,350,145,4055,12,76,US
+13,Ford F108,8,302,130,3870,15,76,US
+13,Dodge D100,8,318,150,3755,14,76,US
+31.5,Honda Accord CVCC,4,98,68,2045,18.5,77,Japan
+30,Buick Opel Isuzu Deluxe,4,111,80,2155,14.8,77,US
+36,Renault 5 GTL,4,79,58,1825,18.6,77,Europe
+25.5,Plymouth Arrow GS,4,122,96,2300,15.5,77,US
+33.5,Datsun F-10 Hatchback,4,85,70,1945,16.8,77,Japan
+17.5,Chevrolet Caprice Classic,8,305,145,3880,12.5,77,US
+17,Oldsmobile Cutlass Supreme,8,260,110,4060,19,77,US
+15.5,Dodge Monaco Brougham,8,318,145,4140,13.7,77,US
+15,Mercury Cougar Brougham,8,302,130,4295,14.9,77,US
+17.5,Chevrolet Concours,6,250,110,3520,16.4,77,US
+20.5,Buick Skylark,6,231,105,3425,16.9,77,US
+19,Plymouth Volare Custom,6,225,100,3630,17.7,77,US
+18.5,Ford Grenada,6,250,98,3525,19,77,US
+16,Pontiac Grand Prix LJ,8,400,180,4220,11.1,77,US
+15.5,Chevrolet Monte Carlo Landau,8,350,170,4165,11.4,77,US
+15.5,Chrysler Cordoba,8,400,190,4325,12.2,77,US
+16,Ford Thunderbird,8,351,149,4335,14.5,77,US
+29,Volkswagen Rabbit Custom,4,97,78,1940,14.5,77,Europe
+24.5,Pontiac Sunbird Coupe,4,151,88,2740,16,77,US
+26,Toyota Corolla Liftback,4,97,75,2265,18.2,77,Japan
+25.5,Ford Mustang II 2+2,4,140,89,2755,15.8,77,US
+30.5,Chevrolet Chevette,4,98,63,2051,17,77,US
+33.5,Dodge Colt m/m,4,98,83,2075,15.9,77,US
+30,Subaru DL,4,97,67,1985,16.4,77,Japan
+30.5,Volkswagen Dasher,4,97,78,2190,14.1,77,Europe
+22,Datsun 810,6,146,97,2815,14.5,77,Japan
+21.5,BMW 320i,4,121,110,2600,12.8,77,Europe
+21.5,Mazda RX-4,3,80,110,2720,13.5,77,Japan
+43.1,Volkswagen Rabbit Custom Diesel,4,90,48,1985,21.5,78,Europe
+36.1,Ford Fiesta,4,98,66,1800,14.4,78,US
+32.8,Mazda GLC Deluxe,4,78,52,1985,19.4,78,Japan
+39.4,Datsun B210 GX,4,85,70,2070,18.6,78,Japan
+36.1,Honda Civic CVCC,4,91,60,1800,16.4,78,Japan
+19.9,Oldsmobile Cutlass Salon Brougham,8,260,110,3365,15.5,78,US
+19.4,Dodge Diplomat,8,318,140,3735,13.2,78,US
+20.2,Mercury Monarch ghia,8,302,139,3570,12.8,78,US
+19.2,Pontiac Phoenix LJ,6,231,105,3535,19.2,78,US
+20.5,Chevrolet Malibu,6,200,95,3155,18.2,78,US
+20.2,Ford Fairmont (auto),6,200,85,2965,15.8,78,US
+25.1,Ford Fairmont (man),4,140,88,2720,15.4,78,US
+20.5,Plymouth Volare,6,225,100,3430,17.2,78,US
+19.4,AMC Concord,6,232,90,3210,17.2,78,US
+20.6,Buick Century Special,6,231,105,3380,15.8,78,US
+20.8,Mercury Zephyr,6,200,85,3070,16.7,78,US
+18.6,Dodge Aspen,6,225,110,3620,18.7,78,US
+18.1,AMC Concord d/l,6,258,120,3410,15.1,78,US
+19.2,Chevrolet Monte Carlo Landau,8,305,145,3425,13.2,78,US
+17.7,Buick Regal Sport Coupe (turbo),6,231,165,3445,13.4,78,US
+18.1,Ford Futura,8,302,139,3205,11.2,78,US
+17.5,Dodge Magnum XE,8,318,140,4080,13.7,78,US
+30,Chevrolet Chevette,4,98,68,2155,16.5,78,US
+27.5,Toyota Corolla,4,134,95,2560,14.2,78,Japan
+27.2,Datsun 510,4,119,97,2300,14.7,78,Japan
+30.9,Dodge Omni,4,105,75,2230,14.5,78,US
+21.1,Toyota Celica GT Liftback,4,134,95,2515,14.8,78,Japan
+23.2,Plymouth Sapporo,4,156,105,2745,16.7,78,US
+23.8,Oldsmobile Starfire SX,4,151,85,2855,17.6,78,US
+23.9,Datsun 200-SX,4,119,97,2405,14.9,78,Japan
+20.3,Audi 5000,5,131,103,2830,15.9,78,Europe
+17,Volvo 264gl,6,163,125,3140,13.6,78,Europe
+21.6,Saab 99gle,4,121,115,2795,15.7,78,Europe
+16.2,Peugeot 604sl,6,163,133,3410,15.8,78,Europe
+31.5,Volkswagen Scirocco,4,89,71,1990,14.9,78,Europe
+29.5,Honda Accord LX,4,98,68,2135,16.6,78,Japan
+21.5,Pontiac Lemans V6,6,231,115,3245,15.4,79,US
+19.8,Mercury Zephyr 6,6,200,85,2990,18.2,79,US
+22.3,Ford Fairmont 4,4,140,88,2890,17.3,79,US
+20.2,AMC Concord DL 6,6,232,90,3265,18.2,79,US
+20.6,Dodge Aspen 6,6,225,110,3360,16.6,79,US
+17,Chevrolet Caprice Classic,8,305,130,3840,15.4,79,US
+17.6,Ford LTD Landau,8,302,129,3725,13.4,79,US
+16.5,Mercury Grand Marquis,8,351,138,3955,13.2,79,US
+18.2,Dodge St. Regis,8,318,135,3830,15.2,79,US
+16.9,Buick Estate Wagon (sw),8,350,155,4360,14.9,79,US
+15.5,Ford Country Squire (sw),8,351,142,4054,14.3,79,US
+19.2,Chevrolet Malibu Classic (sw),8,267,125,3605,15,79,US
+18.5,Chrysler Lebaron Town @ Country (sw),8,360,150,3940,13,79,US
+31.9,Volkswagen Rabbit Custom,4,89,71,1925,14,79,Europe
+34.1,Mazda GLC Deluxe,4,86,65,1975,15.2,79,Japan
+35.7,Dodge Colt Hatchback Custom,4,98,80,1915,14.4,79,US
+27.4,AMC Spirit DL,4,121,80,2670,15,79,US
+25.4,Mercedes Benz 300d,5,183,77,3530,20.1,79,Europe
+23,Cadillac Eldorado,8,350,125,3900,17.4,79,US
+27.2,Peugeot 504,4,141,71,3190,24.8,79,Europe
+23.9,Oldsmobile Cutlass Salon Brougham,8,260,90,3420,22.2,79,US
+34.2,Plymouth Horizon,4,105,70,2200,13.2,79,US
+34.5,Plymouth Horizon TC3,4,105,70,2150,14.9,79,US
+31.8,Datsun 210,4,85,65,2020,19.2,79,Japan
+37.3,Fiat Strada Custom,4,91,69,2130,14.7,79,Europe
+28.4,Buick Skylark Limited,4,151,90,2670,16,79,US
+28.8,Chevrolet Citation,6,173,115,2595,11.3,79,US
+26.8,Oldsmobile Omega Brougham,6,173,115,2700,12.9,79,US
+33.5,Pontiac Phoenix,4,151,90,2556,13.2,79,US
+41.5,Volkswagen Rabbit,4,98,76,2144,14.7,80,Europe
+38.1,Toyota Corolla Tercel,4,89,60,1968,18.8,80,Japan
+32.1,Chevrolet Chevette,4,98,70,2120,15.5,80,US
+37.2,Datsun 310,4,86,65,2019,16.4,80,Japan
+28,Chevrolet Citation,4,151,90,2678,16.5,80,US
+26.4,Ford Fairmont,4,140,88,2870,18.1,80,US
+24.3,AMC Concord,4,151,90,3003,20.1,80,US
+19.1,Dodge Aspen,6,225,90,3381,18.7,80,US
+34.3,Audi 4000,4,97,78,2188,15.8,80,Europe
+29.8,Toyota Corolla Liftback,4,134,90,2711,15.5,80,Japan
+31.3,Mazda 626,4,120,75,2542,17.5,80,Japan
+37,Datsun 510 Hatchback,4,119,92,2434,15,80,Japan
+32.2,Toyota Corolla,4,108,75,2265,15.2,80,Japan
+46.6,Mazda GLC,4,86,65,2110,17.9,80,Japan
+27.9,Dodge Colt,4,156,105,2800,14.4,80,US
+40.8,Datsun 210,4,85,65,2110,19.2,80,Japan
+44.3,Volkswagen Rabbit C (Diesel),4,90,48,2085,21.7,80,Europe
+43.4,Volkswagen Dasher (diesel),4,90,48,2335,23.7,80,Europe
+36.4,Audi 5000s (diesel),5,121,67,2950,19.9,80,Europe
+30,Mercedes-Benz 240d,4,146,67,3250,21.8,80,Europe
+44.6,Honda Civic 1500 gl,4,91,67,1850,13.8,80,Japan
+40.9,Renault Lecar Deluxe,4,85,0,1835,17.3,80,Europe
+33.8,Subaru DL,4,97,67,2145,18,80,Japan
+29.8,Volkswagen Rabbit,4,89,62,1845,15.3,80,Europe
+32.7,Datsun 280-ZX,6,168,132,2910,11.4,80,Japan
+23.7,Mazda RX-7 GS,3,70,100,2420,12.5,80,Japan
+35,Triumph TR7 Coupe,4,122,88,2500,15.1,80,Europe
+23.6,Ford Mustang Cobra,4,140,0,2905,14.3,80,US
+32.4,Honda Accord,4,107,72,2290,17,80,Japan
+27.2,Plymouth Reliant,4,135,84,2490,15.7,81,US
+26.6,Buick Skylark,4,151,84,2635,16.4,81,US
+25.8,Dodge Aries Wagon (sw),4,156,92,2620,14.4,81,US
+23.5,Chevrolet Citation,6,173,110,2725,12.6,81,US
+30,Plymouth Reliant,4,135,84,2385,12.9,81,US
+39.1,Toyota Starlet,4,79,58,1755,16.9,81,Japan
+39,Plymouth Champ,4,86,64,1875,16.4,81,US
+35.1,Honda Civic 1300,4,81,60,1760,16.1,81,Japan
+32.3,Subaru,4,97,67,2065,17.8,81,Japan
+37,Datsun 210 MPG,4,85,65,1975,19.4,81,Japan
+37.7,Toyota Tercel,4,89,62,2050,17.3,81,Japan
+34.1,Mazda GLC 4,4,91,68,1985,16,81,Japan
+34.7,Plymouth Horizon 4,4,105,63,2215,14.9,81,US
+34.4,Ford Escort 4W,4,98,65,2045,16.2,81,US
+29.9,Ford Escort 2H,4,98,65,2380,20.7,81,US
+33,Volkswagen Jetta,4,105,74,2190,14.2,81,Europe
+34.5,Renault 18i,4,100,0,2320,15.8,81,Europe
+33.7,Honda Prelude,4,107,75,2210,14.4,81,Japan
+32.4,Toyota Corolla,4,108,75,2350,16.8,81,Japan
+32.9,Datsun 200SX,4,119,100,2615,14.8,81,Japan
+31.6,Mazda 626,4,120,74,2635,18.3,81,Japan
+28.1,Peugeot 505s Turbo Diesel,4,141,80,3230,20.4,81,Europe
+0,Saab 900s,4,121,110,2800,15.4,81,Europe
+30.7,Volvo Diesel,6,145,76,3160,19.6,81,Europe
+25.4,Toyota Cressida,6,168,116,2900,12.6,81,Japan
+24.2,Datsun 810 Maxima,6,146,120,2930,13.8,81,Japan
+22.4,Buick Century,6,231,110,3415,15.8,81,US
+26.6,Oldsmobile Cutlass LS,8,350,105,3725,19,81,US
+20.2,Ford Grenada gl,6,200,88,3060,17.1,81,US
+17.6,Chrysler Lebaron Salon,6,225,85,3465,16.6,81,US
+28,Chevrolet Cavalier,4,112,88,2605,19.6,82,US
+27,Chevrolet Cavalier Wagon,4,112,88,2640,18.6,82,US
+34,Chevrolet Cavalier 2-door,4,112,88,2395,18,82,US
+31,Pontiac J2000 SE Hatchback,4,112,85,2575,16.2,82,US
+29,Dodge Aries SE,4,135,84,2525,16,82,US
+27,Pontiac Phoenix,4,151,90,2735,18,82,US
+24,Ford Fairmont Futura,4,140,92,2865,16.4,82,US
+23,AMC Concord DL,4,151,0,3035,20.5,82,US
+36,Volkswagen Rabbit l,4,105,74,1980,15.3,82,Europe
+37,Mazda GLC Custom l,4,91,68,2025,18.2,82,Japan
+31,Mazda GLC Custom,4,91,68,1970,17.6,82,Japan
+38,Plymouth Horizon Miser,4,105,63,2125,14.7,82,US
+36,Mercury Lynx l,4,98,70,2125,17.3,82,US
+36,Nissan Stanza XE,4,120,88,2160,14.5,82,Japan
+36,Honda Accord,4,107,75,2205,14.5,82,Japan
+34,Toyota Corolla,4,108,70,2245,16.9,82,Japan
+38,Honda Civic,4,91,67,1965,15,82,Japan
+32,Honda Civic (auto),4,91,67,1965,15.7,82,Japan
+38,Datsun 310 GX,4,91,67,1995,16.2,82,Japan
+25,Buick Century Limited,6,181,110,2945,16.4,82,US
+38,Oldsmobile Cutlass Ciera (diesel),6,262,85,3015,17,82,US
+26,Chrysler Lebaron Medallion,4,156,92,2585,14.5,82,US
+22,Ford Grenada l,6,232,112,2835,14.7,82,US
+32,Toyota Celica GT,4,144,96,2665,13.9,82,Japan
+36,Dodge Charger 2.2,4,135,84,2370,13,82,US
+27,Chevrolet Camaro,4,151,90,2950,17.3,82,US
+27,Ford Mustang GL,4,140,86,2790,15.6,82,US
+44,Volkswagen Pickup,4,97,52,2130,24.6,82,Europe
+32,Dodge Rampage,4,135,84,2295,11.6,82,US
+28,Ford Ranger,4,120,79,2625,18.6,82,US
+31,Chevy S-10,4,119,82,2720,19.4,82,US
