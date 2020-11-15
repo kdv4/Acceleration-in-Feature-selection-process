@@ -1,0 +1,7 @@
+colormap
+easydev
+sklearn
+numpy
+matplotlib
+pandas
+xlwt
