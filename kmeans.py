@@ -7,6 +7,8 @@ import pandas as pd
 import random as r
 import math
 
+file='cars.csv'
+
 def show_kmeans(X,no_cluster,y_kmeans,kmeans):
     # Visualising the clusters
     from colormap import rgb2hex
@@ -29,29 +31,11 @@ def show_elbow(no_cluster,wcss):
     plt.ylabel('WCSS')
     plt.show()
 
-def Write_XL(List,row,col,category): 
-    from xlwt import Workbook
 
-    wb = Workbook() 
-    sheet1 = wb.add_sheet('Sheet 1')
+
+
+def kmeansCluster(dataset):
     
-    #This loop is for writing header
-    for i in range(col):
-        sheet1.write(0,i,category[i])
-
-    for i in range(row):
-        for j in range(col):
-            sheet1.write(i+1,j,List[i][j])
-
-    wb.save('centroids.xls')
-
-
-def kmeansCluster(file,start,end):
-    # Importing the dataset
-    dataset = pd.read_csv(file)
-    X = dataset.iloc[:,start:end].values
-    category=list(dataset.columns)
-    category=category[start:end]
     #y = dataset.iloc[:, 0].values
 
     # Splitting the dataset into the Training set and Test set
@@ -68,6 +52,7 @@ def kmeansCluster(file,start,end):
 
     # Using the elbow method to find the optimal number of clusters
     from sklearn.cluster import KMeans
+    '''
     no_cluster=int(input("Enter Number of cluster you want to check: "))
     wcss = []
     for i in range(1, no_cluster):
@@ -77,19 +62,20 @@ def kmeansCluster(file,start,end):
     
     #To display graph of k v/s Wcss
     #show_elbow(no_cluster,wcss)
-    
 
-    # Fitting K-Means to the dataset
-    no_cluster=int(math.sqrt(len(X)/2))
     #no_cluster=int(input("select no of cluter: "))
+    '''
+
+    no_cluster=int(math.sqrt(len(dataset)/2))
+    # Fitting K-Means to the dataset
     kmeans = KMeans(n_clusters = no_cluster, init = 'k-means++', random_state = 42,max_iter=300)
-    y_kmeans = kmeans.fit_predict(X)
+    y_kmeans = kmeans.fit_predict(dataset)
     
-    #Writing new data point of clusters in xls undername "centroid.xls" 
-    Write_XL(kmeans.cluster_centers_,len(kmeans.cluster_centers_),len(kmeans.cluster_centers_[0]),category)
-
+    return kmeans.cluster_centers_
     #Visualize kmeans in 2D which is kind of not possible
-    #kmeans_show(X,no_cluster,y_kmenas,kmeans)
+    #kmeans_show(X,no_cluster,y_kmeans,kmeans)
     
-
-kmeansCluster('cars.csv',2,7)
+if __name__ == "__main__":
+    dataset=pd.read_csv(file)
+    X= dataset.iloc[:,1:9]
+    kmeansCluster(file)
