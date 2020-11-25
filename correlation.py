@@ -1,47 +1,44 @@
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.feature_selection import mutual_info_regression, mutual_info_classif
-from sklearn.feature_selection import SelectKBest, SelectPercentile
-from sklearn.preprocessing import LabelEncoder
-from scipy.io import loadmat
-# %matplotlib inline
+# from sklearn.model_selection import train_test_split
+from scipy.stats import pearsonr as peterson
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-# Load Dataset
-dataset= pd.read_csv('cars.csv')
-# print(dataset.head())
+file='cars.csv'
 
-#This is use to convert Text dat to Numeric Data
-car_encoder = LabelEncoder()
-origin_encoder = LabelEncoder()
+def visualize_corrlation(category,importances,indices):
+    #Visualize correlation
+    plt.title('Correlation Graph')
+    plt.barh(range(len(indices)), importances[indices], color='g', align='center')
+    plt.yticks(range(len(indices)), [category[i] for i in indices])
+    plt.xlabel('Relative Importance')
+    plt.show()
+    
+def cal_vif(x):
+    thresh = 5 
+    output= pd. DataFrame() 
+    k = x.shape[1] 
+    vif = [variance_inflation_factor(x.values, i) for i in range(x.shape[1])] 
+    for i in range(1,k):
+        # print('Iteration no ',i) 
+        # print(vif) 
+        a = np.argmax(vif) 
+        #print('Max vif is for variable no : ',a) 
+        if(vif[a]<=thresh):
+            break 
+        if(i==1):
+            output = x.drop(x.columns[a], axis=1)
+            vif = [variance_inflation_factor(output.values, j) for j in range(output.shape[1])] 
+        elif(i>1):
+            output = output.drop(output.columns[a], axis=1)
+            vif = [variance_inflation_factor (output.values,j) for j in range (output.shape[1])] 
+    return(output)
+    
 
-X_car= dataset.iloc[:, 0].values
-X_car = car_encoder.fit_transform(X_car)
-X_origin=dataset.iloc[:,8].values
-X_origin=origin_encoder.fit_transform(X_origin)
-
-#Here MPG is predicting value
-X= dataset.iloc[:,1:9]
-X['Car'] = X_car
-X['Origin']=X_origin
-y= dataset.iloc[:,0].values
-
-#Full data consist of data and output(MPG) both
-full_data= X.copy()
-full_data['MPG']= y
-print(full_data.head(2))
-
-#Here we will are Finding correlation of data
-importances = full_data.drop("MPG", axis=1).apply(lambda x: x.corr(full_data.MPG))
-indices = np.argsort(importances)
-print(importances[indices])
-
-#Visualize correlation
-names=['weight','displacement','cylinders','horsepower','Origin','acceleration','model year', 'car']
-plt.title('Miles Per Gallon')
-plt.barh(range(len(indices)), importances[indices], color='g', align='center')
-plt.yticks(range(len(indices)), [names[i] for i in indices])
-plt.xlabel('Relative Importance')
-plt.show()
+if __name__ == "__main__":
+    dataset= pd.read_csv(file)
+    X= dataset.iloc[:,1:9]
+    Y=0
+    find_correlation(X,Y)
+    
