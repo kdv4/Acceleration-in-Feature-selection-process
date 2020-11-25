@@ -9,3 +9,10 @@ https://realpython.com/k-means-clustering-python/
 
 Machine Learning all basic codes
 https://github.com/srafay/Machine_Learning_A-Z
+
+Feature Selection explanation
+https://medium.com/analytics-vidhya/feature-selection-techniques-2614b3b7efcd
+
+Other
+https://stats.stackexchange.com/questions/108743/methods-in-r-or-python-to-perform-feature-selection-in-unsupervised-learning
+https://datascience.stackexchange.com/questions/29572/is-it-possible-to-do-feature-selection-for-unsupervised-machine-learning-problem
