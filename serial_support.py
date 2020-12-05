@@ -29,7 +29,7 @@ def Write_XL(List,row,col,category):
         for j in range(col):
             sheet1.write(i+1,j,List[i][j])
 
-    wb.save('centroids.xls')
+    wb.save('./output/centroids.xls')
 
 def navie_byes(X_train,Y_train,X_test,Y_test):
     gnb = GaussianNB()
