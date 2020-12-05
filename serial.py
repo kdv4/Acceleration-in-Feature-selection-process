@@ -2,16 +2,23 @@ import kmeans
 import correlation as cr
 import pandas as pd
 import serial_support as ss
+from sklearn.model_selection import train_test_split
+import math
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning) 
+
+#TODO: Find high dimensional dataset 
 
 #mandatory parameter needs to change
-file='cars.csv'
-text_indices=[1,8]
-start=0
-end=9
-y=1
+file='dataset.csv'
+text_indices=[1]
+start=2
+out='1'
+delimiter=';'
 
 if __name__ == "__main__":
     dataset=pd.read_csv(file)
+    end=len(dataset.columns)
 
     #This is use to convert Text dat to Numeric Data
     for i in text_indices:
@@ -20,31 +27,42 @@ if __name__ == "__main__":
         dataset[title]=temp
 
     #Part of dataset we want
-    X= dataset.iloc[:,start:end]
-    # print(X.head())
-    category=list(X.columns)
+    X_raw= dataset.iloc[:,start:end]
+    tmp=list(dataset.columns)
+    category=tmp[start:end]
 
-    #TODO: Need to make it with for loop;
-    X_car=ss.encoder(dataset,1)
-    X_origin=ss.encoder(dataset,8)
-    # #Change Value in dataset according to it's return value
-    X['Car'] = X_car
-    X['Origin']=X_origin
+    if(out.isnumeric()):
+        Y_raw=dataset.iloc[:,int(out)]
+        # category.insert(0,tmp[int(out)])
+    else:
+        Y_raw= dataset.loc[:,out]
+        # category.insert(0,out)   
+
+    X_train, X_test, Y_train, Y_test = train_test_split(X_raw, Y_raw, test_size = 0.2, random_state = 0)
+    print("Accuracy of Raw data is: "+str(ss.navie_byes(X_train,Y_train,X_test,Y_test)))
+    
 
     #Direct Feature selection
-    selected_features = cr.cal_vif(X) 
-    print(selected_features.head())
-    #[category,importances,indices]=cr.find_correlation(X,y)
-    #cr.visualize_corrlation(category,importances,indices)
-
+    selected_features = cr.cal_vif(X_raw) 
+    X_train, X_test, Y_train, Y_test = train_test_split(selected_features, Y_raw, test_size = 0.2, random_state = 0)
+    print("Accuracy using direct feature selection is: "+str(ss.navie_byes(X_train,Y_train,X_test,Y_test)))
+    
+    
     #Kmeans+Feature Selection
-    centroids=kmeans.kmeansCluster(X)
+    
+    start=int(math.sqrt(len(dataset)/2))
+    ss.check_kmenas(X_raw,Y_raw,start,start*2+5,category)
+
+    centroids=kmeans.kmeansCluster(X_raw,18)
     ss.Write_XL(centroids,len(centroids),len(centroids[0]),category)
+    
+    data_kmeans=pd.read_excel('centroids.xls')
+    X_kmeans=data_kmeans.iloc[:,:] 
+    
+    selected_features = cr.cal_vif(X_kmeans)
 
-    dataset=pd.read_excel('centroids.xls')
-    # [category,importances,indices]=cr.find_correlation(X)
-    # cr.visualize_corrlation(category,importances,indices)
-    selected_features = cr.cal_vif(dataset) 
-    print(selected_features.head())
+    X_modify=X_raw.loc[:,selected_features.columns]
 
-
+    X_train, X_test, Y_train, Y_test = train_test_split(X_modify, Y_raw, test_size = 0.2, random_state = 0)
+    print("Accuracy using Kmenas+feature selection is: "+str(ss.navie_byes(X_train,Y_train,X_test,Y_test)))
+    

@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 # from sklearn.model_selection import train_test_split
 from scipy.stats import pearsonr as peterson
 from statsmodels.stats.outliers_influence import variance_inflation_factor
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
 file='cars.csv'
 
@@ -34,11 +36,7 @@ def cal_vif(x):
             output = output.drop(output.columns[a], axis=1)
             vif = [variance_inflation_factor (output.values,j) for j in range (output.shape[1])] 
     return(output)
-    
 
 if __name__ == "__main__":
     dataset= pd.read_csv(file)
     X= dataset.iloc[:,1:9]
-    Y=0
-    find_correlation(X,Y)
-    
