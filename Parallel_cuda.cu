@@ -32,7 +32,6 @@ __global__ void get_dst(float *dst, float *x,
   {
         dst[I(i, j, blockDim.x)] += (x[i*f +l] - mu_x[j*f + l]) *  (x[i*f +l] - mu_x[j*f + l]); 
   }
-
 }
 
 __global__ void regroup(int *group, float *dst, int k){
@@ -194,7 +193,9 @@ void read_data(float *x, float *mu_x, int *n, int *k,char* arg, int no_feature, 
   FILE *fp;
   int i,j;
   fp = fopen(arg, "r");
+  
   *n=no_data;
+  
   for(i = 0; i < no_data; i++)
     {
         for(j = 0; j < no_feature; j++)
