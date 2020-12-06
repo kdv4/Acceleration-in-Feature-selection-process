@@ -1,5 +1,5 @@
-<b>Acceleratin in Feature Selection</b><br>
-In this project, we are implementing serial and parallel code of feature selection.<br>
+# Acceleratin in Feature Selection<br>
+In this project, we are implementing serial and parallel code for feature selection.<br>
 We used kmenas before feature selection.<br>
 What kind of analysis will get in the following project?<br>
 How much time and accuracy?<br>
@@ -14,7 +14,7 @@ Classifier: Naive Bayes
 Feature Selection:  Variance Inflation Factor (VIF)
 
 
-<b>How to run code?</b><br>
+## How to run code?<br>
 python3 main.py
 
 In this main.py file, need to edit the following parameters<br>
