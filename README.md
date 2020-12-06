@@ -1,4 +1,4 @@
-<b>Ac Project</b><br>
+<b>Acceleratin in Feature Selection</b><br>
 In this project, we are implementing serial and parallel code of feature selection.<br>
 We used kmenas before feature selection.<br>
 What kind of analysis will get in the following project?<br>
