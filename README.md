@@ -1,8 +1,8 @@
-##Ac Project
-***In this project, we are implementing serial and parallel code of feature selection.
-We used kmenas before feature selection.
-What kind of analysis will get in the following project?
-How much time and accuracy?
+<b>Ac Project</b><br>
+In this project, we are implementing serial and parallel code of feature selection.<br>
+We used kmenas before feature selection.<br>
+What kind of analysis will get in the following project?<br>
+How much time and accuracy?<br>
 
 Analysis of accuracy and time consumption in the following methods:
 1. Direct Classifier
@@ -11,10 +11,10 @@ Analysis of accuracy and time consumption in the following methods:
 4. Kmenas Parallel + Feature Selection Method + Classifier
 In the above project 
 Classifier: Naive Bayes
-Feature Selection:  Variance Inflation Factor (VIF)***
+Feature Selection:  Variance Inflation Factor (VIF)
 
 
-##How to run code?
+<b>How to run code?</b><br>
 python3 main.py
 
 In this main.py file, need to edit the following parameters
