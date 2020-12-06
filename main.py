@@ -11,8 +11,6 @@ import os
 warnings.filterwarnings("ignore", category=RuntimeWarning) 
 import parallel_support as ps
 
-#TODO: Find high dimensional dataset 
-#mandatory parameter needs to change
 file='Dataset/dataset.csv'
 text_indices=[1]
 start=2
@@ -60,7 +58,7 @@ if __name__ == "__main__":
     #ss.check_kmenas(X_raw,Y_raw,start_c,start_c*2+5,category)
     start=time()
     centroids=kmeans.kmeansCluster(X_raw,int(input("Enter number of Cluster: ")))
-    ss.Write_XL(centroids,len(centroids),len(centroids[0]),category)
+    ss.Write_XL(centroids,len(centroids),len(centroids[0]),category,"output/centroids.xls")
     
     data_kmeans=pd.read_excel('output/centroids.xls')
     X_kmeans=data_kmeans.iloc[:,:] 
@@ -76,22 +74,38 @@ if __name__ == "__main__":
     
     
     #Kmeans Parallel+Feature Selection
-    start=int(math.sqrt(len(dataset)/2))
-    start=time()
+    
    	
     #4.1 Write in TXT file
     ps.Write_TXT("input/X.txt",X_raw)
     
-    #4.2 Initial Centroids
-    k=3
-    ps.init_centroid(X_raw,k)
-    
-    #4.3 Call cuda Kmeans
     os.system("nvcc Parallel_cuda.cu -o parallel_cuda")
+    
+    start_c=int(math.sqrt(len(dataset)/2))
+    ps.check_kmenas(X_raw,Y_raw,start_c,start_c*2+5,category)
+    
+    
+    #4.2 Initial Centroids
+    k=19
+    #ps.init_centroid(X_raw,k)
+    ps.init_centroids_k(X_raw,k,category)
+    
+    start=time()
+    #4.3 Call cuda Kmeans
     os.system(f"./parallel_cuda {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
     
     #4.4 Write back into Excel
-    ps.Write_XL("output/centroid_P.xls",category)
+    ps.Write_XL("output/centroids_P.xls",category)
+    
+    #4.5 Feasture selection
+    data_kmeans=pd.read_excel('output/centroids_P.xls')
+    X_kmeans=data_kmeans.iloc[:,:] 
+    
+    selected_features = cr.cal_vif(X_kmeans)
+    X_modify=X_raw.loc[:,selected_features.columns]
+
+    X_train, X_test, Y_train, Y_test = train_test_split(X_modify, Y_raw, test_size = 0.2, random_state = 0)
+    print("Accuracy using Kmenas Parallel+feature selection is: "+str(ss.navie_byes(X_train,Y_train,X_test,Y_test)))
     end=time()
     print("Time taken by it: "+str((end-start)*1000)+" ms")
     

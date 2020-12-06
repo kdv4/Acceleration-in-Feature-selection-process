@@ -15,7 +15,7 @@ def encoder(dataset,indices):
     return X_trans
 
 #This function is used to save file as xls
-def Write_XL(List,row,col,category): 
+def Write_XL(List,row,col,category,file): 
     from xlwt import Workbook
 
     wb = Workbook() 
@@ -29,7 +29,7 @@ def Write_XL(List,row,col,category):
         for j in range(col):
             sheet1.write(i+1,j,List[i][j])
 
-    wb.save('output/centroids.xls')
+    wb.save(file)
 
 def navie_byes(X_train,Y_train,X_test,Y_test):
     gnb = GaussianNB()
@@ -48,7 +48,7 @@ def check_kmenas(X_raw,Y_raw,start,end,category):
     X={}
     for i in range(start,end):
         centroids=kmeans.kmeansCluster(X_raw,i)
-        Write_XL(centroids,len(centroids),len(centroids[0]),category)
+        Write_XL(centroids,len(centroids),len(centroids[0]),category,"output/centroids.xls")
     
         data_kmeans=pd.read_excel('output/centroids.xls')
         X_kmeans=data_kmeans.iloc[:,:] 
