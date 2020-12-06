@@ -17,7 +17,6 @@ def show_elbow(no_cluster,wcss):
     plt.show()
 
 def kmeansCluster(X_train,no_cluster):
-    
     # Fitting K-Means to the dataset
     kmeans = KMeans(n_clusters = no_cluster, init = 'k-means++', random_state = 42,max_iter=300)
     kmeans.fit_predict(X_train)

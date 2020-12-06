@@ -7,16 +7,8 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
-file='cars.csv'
-
-def visualize_corrlation(category,importances,indices):
-    #Visualize correlation
-    plt.title('Correlation Graph')
-    plt.barh(range(len(indices)), importances[indices], color='g', align='center')
-    plt.yticks(range(len(indices)), [category[i] for i in indices])
-    plt.xlabel('Relative Importance')
-    plt.show()
-    
+file='Dataset/cars.csv'
+   
 def cal_vif(x):
     thresh = 5 
     output= pd. DataFrame() 

@@ -15,5 +15,7 @@ list=data.sample(2).values
 list=list.tolist()
 print(type(list))
 print(list)
-with open('input/initCoord','w') as fp:
-	file.writelines('\t'.join(str(j) for j in i) + '\n' for i in top_list)
+with open('input/initCoord.txt','w') as fp:
+	for i in range(len(list)):
+		fp.writelines(["%s " % item  for item in list[i]])
+		fp.writelines("\n")

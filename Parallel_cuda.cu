@@ -148,16 +148,8 @@ int main(int argc,char* argv[]){
   
   
   /* perform kmeans */
-  const auto start = std::chrono::high_resolution_clock::now();
   kmeans(1, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
 
-  const auto end = std::chrono::high_resolution_clock::now();
-  const auto duration =
-      std::chrono::duration_cast<std::chrono::duration<float>>(end - start);
-  std::cerr << "CUDA Took: " << duration.count() << "s" << " for "<<argv[3]<<" points." << std::endl;
-
-
-gpu_time_used = duration.count();
 
   /* read back data from gpu */
   CUDA_CALL(cudaMemcpy(group, group_d, n*sizeof(int), cudaMemcpyDeviceToHost));
@@ -213,16 +205,16 @@ void print_results(int *group, float *mu_x, int n, int k,char* arg,int no_featur
   FILE *fp;
   int i,j;
   std::string str(arg),str1,str2;
-  str = "output/" + str;
+  str = "output/" ;
 
-   str1 = str + "_group_members.txt";
+  str1 = str + "group_members.txt";
   fp = fopen(str1.c_str(), "w");
   for(i = 0; i < n; ++i){
     fprintf(fp, "%d\n", group[i]);
   }
   fclose(fp);
   
-  str2 = str + "_centroids.txt";
+  str2 = str + "centroids.txt";
   fp = fopen(str2.c_str(), "w");
   
   for(i=0;i < k; ++i){
@@ -233,8 +225,4 @@ void print_results(int *group, float *mu_x, int n, int k,char* arg,int no_featur
   }
   
   fclose(fp);
-
-  fp = fopen("CUDAtimes.txt", "a");
-    fprintf(fp, "%0.6f\n", gpu_time_used);
-fclose(fp);
 }

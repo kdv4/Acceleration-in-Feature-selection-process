@@ -6,10 +6,12 @@ from sklearn.model_selection import train_test_split
 import math
 from time import time
 import warnings
+import sys
+import os
 warnings.filterwarnings("ignore", category=RuntimeWarning) 
+import parallel_support as ps
 
 #TODO: Find high dimensional dataset 
-
 #mandatory parameter needs to change
 file='Dataset/dataset.csv'
 text_indices=[1]
@@ -38,6 +40,7 @@ if __name__ == "__main__":
         Y_raw= dataset.loc[:,out]
         # category.insert(0,out)   
 
+    #Direct Classifier
     start=time()
     X_train, X_test, Y_train, Y_test = train_test_split(X_raw, Y_raw, test_size = 0.2, random_state = 0)
     print("Accuracy of Raw data is: "+str(ss.navie_byes(X_train,Y_train,X_test,Y_test)))
@@ -52,9 +55,9 @@ if __name__ == "__main__":
     end=time()
     print("Time taken by it: "+str((end-start)*1000)+" ms")
     
-    #Kmeans+Feature Selection
-    start=int(math.sqrt(len(dataset)/2))
-    ss.check_kmenas(X_raw,Y_raw,start,start*2+5,category)
+    #Kmeans Serial+Feature Selection
+    start_c=int(math.sqrt(len(dataset)/2))
+    #ss.check_kmenas(X_raw,Y_raw,start_c,start_c*2+5,category)
     start=time()
     centroids=kmeans.kmeansCluster(X_raw,int(input("Enter number of Cluster: ")))
     ss.Write_XL(centroids,len(centroids),len(centroids[0]),category)
@@ -70,3 +73,25 @@ if __name__ == "__main__":
 
     end=time()
     print("Time taken by it: "+str((end-start)*1000)+" ms")
+    
+    
+    #Kmeans Parallel+Feature Selection
+    start=int(math.sqrt(len(dataset)/2))
+    start=time()
+   	
+    #4.1 Write in TXT file
+    ps.Write_TXT("input/X.txt",X_raw)
+    
+    #4.2 Initial Centroids
+    k=3
+    ps.init_centroid(X_raw,k)
+    
+    #4.3 Call cuda Kmeans
+    os.system("nvcc Parallel_cuda.cu -o parallel_cuda")
+    os.system(f"./parallel_cuda {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
+    
+    #4.4 Write back into Excel
+    ps.Write_XL("output/centroid_P.xls",category)
+    end=time()
+    print("Time taken by it: "+str((end-start)*1000)+" ms")
+    
