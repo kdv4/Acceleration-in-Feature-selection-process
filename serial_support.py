@@ -29,7 +29,7 @@ def Write_XL(List,row,col,category):
         for j in range(col):
             sheet1.write(i+1,j,List[i][j])
 
-    wb.save('./output/centroids.xls')
+    wb.save('output/centroids.xls')
 
 def navie_byes(X_train,Y_train,X_test,Y_test):
     gnb = GaussianNB()
@@ -50,7 +50,7 @@ def check_kmenas(X_raw,Y_raw,start,end,category):
         centroids=kmeans.kmeansCluster(X_raw,i)
         Write_XL(centroids,len(centroids),len(centroids[0]),category)
     
-        data_kmeans=pd.read_excel('centroids.xls')
+        data_kmeans=pd.read_excel('output/centroids.xls')
         X_kmeans=data_kmeans.iloc[:,:] 
         
         selected_features = cr.cal_vif(X_kmeans)
@@ -61,4 +61,4 @@ def check_kmenas(X_raw,Y_raw,start,end,category):
 
         X[i]=navie_byes(X_train,Y_train,X_test,Y_test)
 
-    plot(X.keys(),X.values())
+    plot(list(X.keys()),list(X.values()))

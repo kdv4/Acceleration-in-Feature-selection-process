@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 #TODO: Find high dimensional dataset 
 
 #mandatory parameter needs to change
-file='dataset.csv'
+file='Dataset/dataset.csv'
 text_indices=[1]
 start=2
 out='1'
@@ -53,13 +53,13 @@ if __name__ == "__main__":
     print("Time taken by it: "+str((end-start)*1000)+" ms")
     
     #Kmeans+Feature Selection
-    # start=int(math.sqrt(len(dataset)/2))
-    # ss.check_kmenas(X_raw,Y_raw,start,start*2+5,category)
+    start=int(math.sqrt(len(dataset)/2))
+    ss.check_kmenas(X_raw,Y_raw,start,start*2+5,category)
     start=time()
-    centroids=kmeans.kmeansCluster(X_raw,19)
+    centroids=kmeans.kmeansCluster(X_raw,int(input("Enter number of Cluster: ")))
     ss.Write_XL(centroids,len(centroids),len(centroids[0]),category)
     
-    data_kmeans=pd.read_excel('centroids.xls')
+    data_kmeans=pd.read_excel('output/centroids.xls')
     X_kmeans=data_kmeans.iloc[:,:] 
     
     selected_features = cr.cal_vif(X_kmeans)

@@ -27,10 +27,12 @@ __global__ void get_dst(float *dst, float *x, float *mu_x, int f){
 
   //updated (in loop):
   dst[I(i, j, blockDim.x)] = (x[i*f] - mu_x[j*f]) * (x[i*f] - mu_x[j*f]);
+  
   for(int l = 1 ; l<f ; l++)
   {
         dst[I(i, j, blockDim.x)] += (x[i*f +l] - mu_x[j*f + l]) *  (x[i*f +l] - mu_x[j*f + l]); 
   }
+  //printf("%d %d %f \n",i,j,dst[I(i, j, blockDim.x)]);
 }
 
 __global__ void regroup(int *group, float *dst, int k){
@@ -108,14 +110,14 @@ void print_results(int *group, float *mu_x, int n, int k,char* arg,int no_featur
 
 int main(int argc,char* argv[]){
   
-   //Argv 1: No of Features
+  //Argv 1: No of Features
   //Argv 2: Input path
   //Argv 3: No of datapoints
   //Argv 4: No of cluster
   
   /* cpu variables */
   int n=atoi(argv[3]); /* number of points */
-  int k; /* number of clusters */
+  int k=atoi(argv[4]); /* number of clusters */
   int f=atoi(argv[1]); /*number of Features */
   int *group;
   float *x = NULL, *mu_x = NULL;
@@ -142,12 +144,10 @@ int main(int argc,char* argv[]){
 
   /* write data to gpu */
   CUDA_CALL(cudaMemcpy(x_d, x, f*n*sizeof(float), cudaMemcpyHostToDevice));
-  //CUDA_CALL(cudaMemcpy(y_d, y, n*sizeof(float), cudaMemcpyHostToDevice));
   CUDA_CALL(cudaMemcpy(mu_x_d, mu_x, f*k*sizeof(float), cudaMemcpyHostToDevice));
-  //CUDA_CALL(cudaMemcpy(mu_y_d, mu_y, k*sizeof(float), cudaMemcpyHostToDevice));
+  
+  
   /* perform kmeans */
-
-
   const auto start = std::chrono::high_resolution_clock::now();
   kmeans(1, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
 
@@ -187,8 +187,6 @@ void read_data(float *x, float *mu_x, int *n, int *k,char* arg, int no_feature, 
   int i,j;
   fp = fopen(arg, "r");
   
-  *n=no_data;
-  
   for(i = 0; i < no_data; i++)
     {
         for(j = 0; j < no_feature; j++)
@@ -197,7 +195,6 @@ void read_data(float *x, float *mu_x, int *n, int *k,char* arg, int no_feature, 
         }    
     }
     
-    *k = 2;
    fp = fopen("input/initCoord.txt", "r");
    for(i = 0; i < *k; i++)
     {
