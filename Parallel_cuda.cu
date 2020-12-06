@@ -21,8 +21,7 @@ float gpu_time_used;
   exit(EXIT_FAILURE);}} 
 
 //f = number of features (from argv[1])
-__global__ void get_dst(float *dst, float *x, 
-      float *mu_x, int f){
+__global__ void get_dst(float *dst, float *x, float *mu_x, int f){
   int i = blockIdx.x;
   int j = threadIdx.x;
 
@@ -112,47 +111,45 @@ int main(int argc,char* argv[]){
    //Argv 1: No of Features
   //Argv 2: Input path
   //Argv 3: No of datapoints
+  //Argv 4: No of cluster
   
   /* cpu variables */
-  int n; /* number of points */
+  int n=atoi(argv[3]); /* number of points */
   int k; /* number of clusters */
+  int f=atoi(argv[1]); /*number of Features */
   int *group;
   float *x = NULL, *mu_x = NULL;
   x = (float*) malloc(atoi(argv[3])*atoi(argv[1])*sizeof(float));
   mu_x = (float*) malloc(atoi(argv[3])*atoi(argv[1])*sizeof(float));
-	
+  	
   /* gpu variables */
-  int *group_d, *nx_d, *ny_d;
-  float *x_d, *y_d, *mu_x_d, *mu_y_d, *sum_x_d, *sum_y_d, *dst_d;
+  int *group_d, *nx_d;
+  float *x_d, *mu_x_d, *sum_x_d, *dst_d;
 
   /* read data from files on cpu */
   read_data(x, mu_x, &n, &k,argv[2], atoi(argv[1]), atoi(argv[3]));
-
+	
   /* allocate cpu memory */
   group = (int*) malloc(n*sizeof(int));
 
   /* allocate gpu memory */
   CUDA_CALL(cudaMalloc((void**) &group_d,n*sizeof(int)));
-  CUDA_CALL(cudaMalloc((void**) &nx_d, k*sizeof(int)));
-  CUDA_CALL(cudaMalloc((void**) &ny_d, k*sizeof(int)));
-  CUDA_CALL(cudaMalloc((void**) &x_d, n*sizeof(float)));
-  CUDA_CALL(cudaMalloc((void**) &y_d, n*sizeof(float)));
-  CUDA_CALL(cudaMalloc((void**) &mu_x_d, k*sizeof(float)));
-  CUDA_CALL(cudaMalloc((void**) &mu_y_d, k*sizeof(float)));
-  CUDA_CALL(cudaMalloc((void**) &sum_x_d, k*sizeof(float)));
-  CUDA_CALL(cudaMalloc((void**) &sum_y_d, k*sizeof(float)));
+  CUDA_CALL(cudaMalloc((void**) &nx_d, f*k*sizeof(int)));
+  CUDA_CALL(cudaMalloc((void**) &x_d, f*n*sizeof(float)));
+  CUDA_CALL(cudaMalloc((void**) &mu_x_d, f*k*sizeof(float)));
+  CUDA_CALL(cudaMalloc((void**) &sum_x_d, f*k*sizeof(float)));
   CUDA_CALL(cudaMalloc((void**) &dst_d, n*k*sizeof(float)));
 
   /* write data to gpu */
-  CUDA_CALL(cudaMemcpy(x_d, x, n*sizeof(float), cudaMemcpyHostToDevice));
+  CUDA_CALL(cudaMemcpy(x_d, x, f*n*sizeof(float), cudaMemcpyHostToDevice));
   //CUDA_CALL(cudaMemcpy(y_d, y, n*sizeof(float), cudaMemcpyHostToDevice));
-  CUDA_CALL(cudaMemcpy(mu_x_d, mu_x, k*sizeof(float), cudaMemcpyHostToDevice));
+  CUDA_CALL(cudaMemcpy(mu_x_d, mu_x, f*k*sizeof(float), cudaMemcpyHostToDevice));
   //CUDA_CALL(cudaMemcpy(mu_y_d, mu_y, k*sizeof(float), cudaMemcpyHostToDevice));
   /* perform kmeans */
 
 
   const auto start = std::chrono::high_resolution_clock::now();
-  kmeans(100, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
+  kmeans(1, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
 
   const auto end = std::chrono::high_resolution_clock::now();
   const auto duration =
@@ -164,7 +161,7 @@ gpu_time_used = duration.count();
 
   /* read back data from gpu */
   CUDA_CALL(cudaMemcpy(group, group_d, n*sizeof(int), cudaMemcpyDeviceToHost));
-  CUDA_CALL(cudaMemcpy(mu_x, mu_x_d, k*sizeof(float), cudaMemcpyDeviceToHost));
+  CUDA_CALL(cudaMemcpy(mu_x, mu_x_d, f*k*sizeof(float), cudaMemcpyDeviceToHost));
   //CUDA_CALL(cudaMemcpy(mu_y, mu_y_d, k*sizeof(float), cudaMemcpyDeviceToHost));
 
   /* print results and clean up */  
@@ -176,14 +173,10 @@ gpu_time_used = duration.count();
   free(group);
 
   CUDA_CALL(cudaFree(x_d));
-  CUDA_CALL(cudaFree(y_d));
   CUDA_CALL(cudaFree(mu_x_d));
-  CUDA_CALL(cudaFree(mu_y_d));
   CUDA_CALL(cudaFree(group_d));
   CUDA_CALL(cudaFree(nx_d));
-  CUDA_CALL(cudaFree(ny_d));
   CUDA_CALL(cudaFree(sum_x_d));
-  CUDA_CALL(cudaFree(sum_y_d));
   CUDA_CALL(cudaFree(dst_d));
 
   return 0;
@@ -204,7 +197,7 @@ void read_data(float *x, float *mu_x, int *n, int *k,char* arg, int no_feature, 
         }    
     }
     
-    *k = 3;
+    *k = 2;
    fp = fopen("input/initCoord.txt", "r");
    for(i = 0; i < *k; i++)
     {
@@ -214,6 +207,8 @@ void read_data(float *x, float *mu_x, int *n, int *k,char* arg, int no_feature, 
         }    
     }
   fclose(fp);
+  
+ 
 }
 
 
@@ -235,7 +230,7 @@ void print_results(int *group, float *mu_x, int n, int k,char* arg,int no_featur
   
   for(i=0;i < k; ++i){
    	for(j = 0; j < no_feature; ++j){
-    		fprintf(fp, "%0.6f", mu_x[i*no_feature+j]);
+    		fprintf(fp, "%0.6f ", mu_x[i*no_feature+j]);
   	}
   	fprintf(fp, "\n");
   }
