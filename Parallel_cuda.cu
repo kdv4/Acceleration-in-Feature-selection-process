@@ -148,7 +148,7 @@ int main(int argc,char* argv[]){
   
   
   /* perform kmeans */
-  kmeans(1, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
+  kmeans(200, n, k, x_d, mu_x_d, group_d, nx_d, sum_x_d, dst_d, atoi(argv[1]));
 
 
   /* read back data from gpu */

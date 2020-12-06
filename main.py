@@ -74,7 +74,6 @@ if __name__ == "__main__":
     
     
     #Kmeans Parallel+Feature Selection
-    
    	
     #4.1 Write in TXT file
     ps.Write_TXT("input/X.txt",X_raw)
@@ -82,11 +81,11 @@ if __name__ == "__main__":
     os.system("nvcc Parallel_cuda.cu -o parallel_cuda")
     
     start_c=int(math.sqrt(len(dataset)/2))
-    ps.check_kmenas(X_raw,Y_raw,start_c,start_c*2+5,category)
+    #ps.check_kmenas(X_raw,Y_raw,start_c,start_c*2+5,category)
     
     
     #4.2 Initial Centroids
-    k=19
+    k=int(input("Enter No of cluster you want for parallel kmeans: "))
     #ps.init_centroid(X_raw,k)
     ps.init_centroids_k(X_raw,k,category)
     
