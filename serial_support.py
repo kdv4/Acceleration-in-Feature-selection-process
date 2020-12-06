@@ -15,7 +15,7 @@ def encoder(dataset,indices):
     return X_trans
 
 #This function is used to save file as xls
-def Write_XL(List,row,col,category,file): 
+def Write_XL(List,row,col,category,fileName): 
     from xlwt import Workbook
 
     wb = Workbook() 
@@ -29,7 +29,7 @@ def Write_XL(List,row,col,category,file):
         for j in range(col):
             sheet1.write(i+1,j,List[i][j])
 
-    wb.save(file)
+    wb.save(fileName)
 
 def navie_byes(X_train,Y_train,X_test,Y_test):
     gnb = GaussianNB()
