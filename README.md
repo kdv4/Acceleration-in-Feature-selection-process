@@ -17,8 +17,8 @@ Feature Selection:  Variance Inflation Factor (VIF)
 <b>How to run code?</b><br>
 python3 main.py
 
-In this main.py file, need to edit the following parameters
-file:= Path to CSV dataset
-text_indices:= This list is consisting of column number which consists of TEXT data
-start:= From which column index essential feature is starting, till the end.
-out:= At which column index output field is stored (This is especially needed for measuring accuracy; for accuracy measure, we used Naive Bayes classifier which is supervised in nature)
+In this main.py file, need to edit the following parameters<br>
+file:= Path to CSV dataset<br>
+text_indices:= This list is consisting of column number which consists of TEXT data<br>
+start:= From which column index essential feature is starting, till the end.<br>
+out:= At which column index output field is stored (This is especially needed for measuring accuracy; for accuracy measure, we used Naive Bayes classifier which is supervised in nature)<br>
