@@ -7,6 +7,10 @@ import pandas as pd
 import random as r
 import math
 from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+from yellowbrick.cluster import KElbowVisualizer
+
 
 def show_elbow(no_cluster,wcss):
     #Plot Number of cluster value graph
@@ -15,6 +19,17 @@ def show_elbow(no_cluster,wcss):
     plt.xlabel('Number of clusters')
     plt.ylabel('WCSS')
     plt.show()
+
+def Elbow(sample,feature):
+	# Generate synthetic dataset with 8 random clusters
+	X, y = make_blobs(n_samples=sample, n_features=feature, centers=8, random_state=42)
+
+	# Instantiate the clustering model and visualizer
+	model = KMeans()
+	visualizer = KElbowVisualizer(model, k=(4,40), metric='calinski_harabasz', timings=False,locate_elbow=True)
+
+	visualizer.fit(X)        # Fit the data to the visualizer
+	visualizer.show() 
 
 def kmeansCluster(X_train,no_cluster):
     # Fitting K-Means to the dataset

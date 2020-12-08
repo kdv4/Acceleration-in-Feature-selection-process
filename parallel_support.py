@@ -42,7 +42,7 @@ def check_kmenas(X_raw,Y_raw,start,end,category):
 	X={}
 	for k in range(start,end):
 		init_centroids_k(X_raw,k,category)
-		os.system(f"./parallel_cuda {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
+		os.system(f"./parallel_cuda1 {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
 		Write_XL("output/centroids_P.xls",category)
 		data_kmeans=pd.read_excel('output/centroids_P.xls')
 		X_kmeans=data_kmeans.iloc[:,:] 
