@@ -64,13 +64,11 @@ __global__ void clear(float *sum_x, int *nx, int f){
 //changes : need 2d array for sum and nx also, f: number of features
 __global__ void recenter_step1(float *sum_x, int *nx,
              float *x, int *group, int n, int f){
-  int i= blockIdx.x * blockDim.x + threadIdx.x;
+  int i;
   int j = threadIdx.x;
-  //int l = threadIdx.x;
-  //for(i = 0; i < n; ++i){
-  if(i < n)
-  {
-  	if(group[i] == (j + 1)){
+
+  for(i = 0; i < n; ++i){
+    if(group[i] == (j + 1)){
 
       //loop through entire sum and n
       for(int l = 0 ; l<f ; l++)
@@ -79,21 +77,18 @@ __global__ void recenter_step1(float *sum_x, int *nx,
         nx[j*f + l]++; 
       }
     }
-  }
-    
-  //}               
+  }               
 }
 
 __global__ void recenter_step2(float *mu_x, float *sum_x,
          int *nx, int f){
-  int j = blockIdx.x;
-  int l = threadIdx.x;
+  int j = threadIdx.x;
 
   // added loop
-  //for(int l = 0 ; l<f ; l++)
-    //  {
+  for(int l = 0 ; l<f ; l++)
+      {
         mu_x[j*f + l] = sum_x[j*f +l]/nx[j*f + l]; 
-      //}
+      }
 }
 
 void kmeans(int nreps, int n, int k,
@@ -105,8 +100,8 @@ void kmeans(int nreps, int n, int k,
     get_dst<<<n,k>>>(dst_d, x_d, mu_x_d, f);
     regroup<<<n,1>>>(group_d, dst_d, k);
     clear<<<1,k>>>(sum_x_d, nx_d, f);
-    recenter_step1<<<n,k>>>(sum_x_d, nx_d, x_d, group_d, n,f);
-    recenter_step2<<<k,f>>>(mu_x_d, sum_x_d, nx_d,f);
+    recenter_step1<<<1,k>>>(sum_x_d, nx_d, x_d, group_d, n,f);
+    recenter_step2<<<1,k>>>(mu_x_d, sum_x_d, nx_d,f);
   }
 }
 

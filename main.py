@@ -77,10 +77,10 @@ if __name__ == "__main__":
    	
     #4.1 Write in TXT file
     ps.Write_TXT("input/X.txt",X_raw)
-    os.system(f"nvcc Parallel_cuda1.cu -o parallel_cuda1")
+    os.system(f"nvcc Parallel_cuda.cu -o parallel_cuda")
 
-    start_c=int(math.sqrt(len(X_raw)/2))
-    ps.check_kmenas(X_raw,Y_raw,start_c,start_c*3,category)
+    #start_c=int(math.sqrt(len(X_raw)/2))
+    #ps.check_kmenas(X_raw,Y_raw,start_c,start_c*3,category)
     
     
     #4.2 Initial Centroids
@@ -90,11 +90,11 @@ if __name__ == "__main__":
     
     start=time()
     #4.3 Call cuda Kmeans
-    os.system(f"./parallel_cuda1 {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
+    os.system(f"./parallel_cuda {len(X_raw.columns)} input/X.txt {len(X_raw)} {k}")	    
     
     #4.4 Write back into Excel
     ps.Write_XL("output/centroids_P.xls",category)
-    
+ 
     #4.5 Feasture selection
     data_kmeans=pd.read_excel('output/centroids_P.xls')
     X_kmeans=data_kmeans.iloc[:,:] 
