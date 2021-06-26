@@ -1,8 +1,6 @@
 # Acceleratin in Feature Selection<br>
 In this project, we are implementing serial and parallel code for feature selection.<br>
 We used kmenas before feature selection.<br>
-What kind of analysis will get in the following project?<br>
-How much time and accuracy?<br>
 
 Analysis of accuracy and time consumption in the following methods:
 1. Direct Classifier
